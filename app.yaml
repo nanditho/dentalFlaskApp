@@ -1,0 +1,11 @@
+runtime: python310
+
+handlers:
+- url: /.*
+  script: PatientGetDetails.app
+
+resources:
+  cpu: 8
+  memory_gb: 4
+  disk_size_gb: 20
+
