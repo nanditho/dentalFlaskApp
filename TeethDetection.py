@@ -120,7 +120,15 @@ def TeethDetection(testImagesDir, resultImagesDir, cloudinaryUploadFolder, patie
                 jpg_files.append(os.path.join(directory, file))
         return jpg_files
 
+    placeholder_input = tf.placeholder(dtype=tf.int32, name='unused_control_flow_input_12')
+    
     for image_path in TEST_IMAGE_PATHS:
+        image_np = np.array(Image.open(image_path))  
+        # Create a feed dictionary for the placeholder
+        image_data = load_image(image_path) 
+        feed_dict = {placeholder_input: image_data}  # Replace 'your_value' with the actual value
+        # Run your inference with the provided feed dictionary
+        output_dict = run_inference_for_single_image(detection_model, image_np, feed_dict=feed_dict)
         show_inference(detection_model, image_path)
 
     if isDetectionCompleted:
