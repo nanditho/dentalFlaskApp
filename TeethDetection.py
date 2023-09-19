@@ -120,8 +120,7 @@ def TeethDetection(testImagesDir, resultImagesDir, cloudinaryUploadFolder, patie
                 jpg_files.append(os.path.join(directory, file))
         return jpg_files
 
-    placeholder_input = tf.placeholder(dtype=tf.int32, name='unused_control_flow_input_12')
-    
+  
     for image_path in TEST_IMAGE_PATHS:
         show_inference(detection_model, image_path)
 
