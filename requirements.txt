@@ -1,5 +1,5 @@
 gunicorn==20.0.4
-pip==23.1.2
+pip==23.2.1
 absl-py==1.4.0
 blinker==1.6.2
 build==0.10.0
@@ -78,7 +78,6 @@ parso==0.8.3
 pickleshare==0.7.5
 platformdirs==2.5.2
 prometheus_client==0.1
-
 pdfkit==1.0.0
 six==1.16.0
 setuptools==66.0.0
